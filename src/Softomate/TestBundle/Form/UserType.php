@@ -22,7 +22,8 @@ class UserType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'Softomate\TestBundle\Entity\User',
             'csrf_protection' => false,
-            'validation_groups' => array('Default', 'create_user')
+            'validation_groups' => array('Default', 'create_user'),
+            'allow_extra_fields' => true,
         ));
     }
 
