@@ -1,0 +1,9 @@
+Softomate\TestBundle\Entity\Coupon:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    code:
+      expose: true
+    title:
+      expose: true

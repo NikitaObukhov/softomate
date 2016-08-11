@@ -1,0 +1,7 @@
+users:
+    type:     rest
+    resource: Softomate\TestBundle\Controller\UsersController
+coupons:
+    type:     rest
+    parent:   users
+    resource: Softomate\TestBundle\Controller\UserCouponsController

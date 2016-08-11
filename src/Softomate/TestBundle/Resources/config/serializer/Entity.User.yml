@@ -1,0 +1,16 @@
+Softomate\TestBundle\Entity\User:
+  exclusion_policy: ALL
+  properties:
+    id:
+      expose: true
+    name:
+      expose: true
+    mail:
+      expose: true
+    token:
+      expose: true
+    createdAt:
+      expose: true
+    pass:
+      expose: true
+      groups: [create_user]

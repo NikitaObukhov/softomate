@@ -1,0 +1,9 @@
+users:
+    type: rest
+    resource: "@TestBundle/Resources/config/routing/users.yml"
+merchants:
+    type: rest
+    resource: "@TestBundle/Resources/config/routing/merchants.yml"
+doc:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /doc

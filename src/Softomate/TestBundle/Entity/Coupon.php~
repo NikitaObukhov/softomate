@@ -1,0 +1,159 @@
+<?php
+
+namespace Softomate\TestBundle\Entity;
+
+/**
+ * Coupon
+ */
+class Coupon
+{
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $code;
+
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var \Softomate\TestBundle\Entity\Merchant
+     */
+    private $merchant;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $users;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Coupon
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     *
+     * @return Coupon
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set merchant
+     *
+     * @param \Softomate\TestBundle\Entity\Merchant $merchant
+     *
+     * @return Coupon
+     */
+    public function setMerchant(\Softomate\TestBundle\Entity\Merchant $merchant = null)
+    {
+        $this->merchant = $merchant;
+
+        return $this;
+    }
+
+    /**
+     * Get merchant
+     *
+     * @return \Softomate\TestBundle\Entity\Merchant
+     */
+    public function getMerchant()
+    {
+        return $this->merchant;
+    }
+
+    /**
+     * Add user
+     *
+     * @param \Softomate\TestBundle\Entity\User $user
+     *
+     * @return Coupon
+     */
+    public function addUser(\Softomate\TestBundle\Entity\User $user)
+    {
+        $this->users[] = $user;
+
+        return $this;
+    }
+
+    /**
+     * Remove user
+     *
+     * @param \Softomate\TestBundle\Entity\User $user
+     */
+    public function removeUser(\Softomate\TestBundle\Entity\User $user)
+    {
+        $this->users->removeElement($user);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+}

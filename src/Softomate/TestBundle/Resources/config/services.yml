@@ -1,0 +1,13 @@
+services:
+    softomate.token_generator:
+        class: Softomate\TestBundle\Utils\TokenGenerator
+    softomate.coupon_code_generator:
+        class: Softomate\TestBundle\Utils\CouponCodeGenerator
+        arguments: ["@doctrine.orm.entity_manager", "%softomate.default_coupon_code_length%"]
+    softomate.user_listener:
+        class: Softomate\TestBundle\Listener\UserListener
+        arguments: ["@softomate.token_generator"]
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+parameters:
+    softomate.default_coupon_code_length: 4

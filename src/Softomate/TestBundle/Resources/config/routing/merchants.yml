@@ -1,0 +1,7 @@
+merchants:
+    type:     rest
+    resource: Softomate\TestBundle\Controller\MerchantsController
+coupons:
+    type:     rest
+    parent:   merchants
+    resource: Softomate\TestBundle\Controller\MerchantCouponsController

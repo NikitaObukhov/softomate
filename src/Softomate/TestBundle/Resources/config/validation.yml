@@ -1,0 +1,22 @@
+Softomate\TestBundle\Entity\User:
+    properties:
+        name:
+            - NotBlank:
+                message: Name is required
+        mail:
+            - NotBlank:
+                message: Email is required
+            - Email:
+                message: "{{ value }} is not a valid email."
+        pass:
+            - NotBlank:
+                message: Password is required
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: mail
+            message: This email is already in use
+            groups: create_user
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: name
+            message: This name is already in use
+            groups: create_user
