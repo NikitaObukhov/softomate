@@ -11,7 +11,15 @@
 Установка
 -------------
 
-Установка при помощи docker-compose:
+    git clone git@github.com:NikitaObukhov/softomate.git
+    cd softomate
+    chmod -R 777 var/cache var/logs
+    composer install
+    php bin/console doctrine:schema:create
+    php bin/console doctrine:fixtures:load
+
+
+#### Установка при помощи docker-compose:
 
     wget http://85.143.210.108:667/softomate.tar.gz
     tar xfz softomate.tar.gz
