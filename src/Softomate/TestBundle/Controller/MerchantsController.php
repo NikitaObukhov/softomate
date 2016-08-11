@@ -64,7 +64,7 @@ class MerchantsController extends ResourceController
     }
 
     /**
-     * Delete a mercahnt
+     * Delete a merchant
      *
      * @ApiDoc(
      *  resource = true,
