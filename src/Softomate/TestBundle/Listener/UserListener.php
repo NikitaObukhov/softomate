@@ -17,7 +17,7 @@ class UserListener {
 
     public function prePersist(LifecycleEventArgs $args)
     {
-        $user = $args->getEntity();
+        $user = $args->getObject();
         if (false === $user instanceof User) {
             throw new \InvalidArgumentException(sprintf('Expected User, got %s', get_class($user)));
         }
