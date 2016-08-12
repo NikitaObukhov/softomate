@@ -35,7 +35,7 @@ class MerchantCouponsController extends FOSRestController
      */
     public function getCouponsAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         if (null === $merchant = $em->getRepository('Softomate\TestBundle\Entity\Merchant')->findOneById($id))
         {
             throw $this->createNotFoundException();

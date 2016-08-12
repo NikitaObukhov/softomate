@@ -35,7 +35,7 @@ class UserCouponsController extends FOSRestController
      */
     public function getCouponsAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         if (null === $user = $em->getRepository('Softomate\TestBundle\Entity\User')->findOneById($id))
         {
             throw $this->createNotFoundException();
